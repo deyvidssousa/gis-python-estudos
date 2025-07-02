@@ -3,9 +3,11 @@ import rasterio
 import rasterstats
 import matplotlib as plt
 import pandas as pd
-import os
 
-caminho_talhao = "dados/talhao.shp"
+#leitura do arquivo shapefile
+caminho_talhao = "01_ndvi_por_talhao/dados/talhao.shp"
 talhao = gpd.read_file(caminho_talhao)
 
-print(talhao.head())
+#leitura do arquivo raster
+caminho_ndvi = "01_ndvi_por_talhao/dados/NDVI_28052025.tiff"
+ndvi = rasterio.open(caminho_ndvi)
